@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="timerPageStyle_v3.css">
+        <link rel="stylesheet" href="riafont-regular-webfont.woff">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
+    </head>
+    
+    <body>
+        <div class="topBar">
+            <img id="shortLogo" src="fwcLogoModified.png" height="1102" width="1092">
+        </div>
+
+        <div class="timer">
+            <table id="timerInterface">
+                <tr>
+                    <td><span id="focusBlockButton" class="switchButtonsTd" onclick="fSwitch()">Focus Block</span></td>
+                    <td><span id="shortBreakButton" class="switchButtonsTd" onclick="sbSwitch()">Short Break</span></td>
+                    <td><span id="longBreakButton" class="switchButtonsTd" onclick="lbSwitch()">Long Break</span></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input id="minuteFieldInput" class="trDisplay" oninput="minuteChange()" maxlength="2"><span id="inputColon" class="trDisplay">:</span><input id="secondFieldInput" class="trDisplay" oninput="secondChange()" maxlength="2"></td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td><image id="playButton" onclick="playResume()" src="play.png"></td>
+                    <td></td>
+                    <td><image id="pauseButton" onclick="pause()" src="pause.png"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="copyrightDiv">
+            <p id="copyright">©Focus With Cats 2023. All Rights Reserved.</p>
+        </div>
+
+        <script src="timerPageScript_v2.js"></script>
+    </body>
+</html>

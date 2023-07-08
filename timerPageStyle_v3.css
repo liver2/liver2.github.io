@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    width: 0;
+    overflow-x: hidden;
+}
+
+.topBar {
+    background-color: black;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+
+.topBar img {
+    height: 75%;
+    width: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: 0;
+    position: relative;
+    left: 2%;
+}
+
+.timer {
+    height: 85vh;
+    width: 100vw;
+    background-image: url("fwcBgModified.png");
+    background-size: auto 100%;
+    display: flex;
+    align-items: center;
+}
+
+@font-face {
+  font-family: 'Riafont';
+  src: url(riafont-regular-webfont.woff);
+}
+
+html {
+  font-family: 'Riafont';
+  font-size: 36px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+td {
+  padding: 0 15px;
+}
+
+.trDisplay {
+  border: none;
+  width: 90px;
+  position: relative;
+  top: 20px;
+  font-family: 'Kalam';
+  font-size: 72px;
+}
+
+input:disabled {
+  color: black;
+}
+
+input {
+  text-align: center;
+  background-color: transparent;
+}
+
+table {
+  margin: auto;
+  padding: 20px;
+  border-collapse: separate;
+}
+
+.switchButtonsTd {
+  border: 2px solid black;
+  border-radius: 5px;
+  border-spacing: 0 30px;
+}
+
+#timerInterface {
+    text-align: center;
+    border-width: 30px; 
+    border: solid grey;
+    border-radius: 30px;
+    background-color: lightgrey; 
+}
+
+#playButton {
+    max-width: 30px;
+    height: auto;
+}
+
+#pauseButton {
+    max-width: 30px;
+    height: auto;
+}
+
+.copyrightDiv {
+  width: 100vw;
+  height: auto;
+  border: solid black 2px;
+  background-color: lightgrey;
+}
+
+#copyright {
+  font-family: sans-serif;
+  color: gray;
+  font-size: 9px;
+  text-align: center;
+}
