@@ -20,7 +20,7 @@ var timerFinishedAudio = new Audio("kinderszenenRingtone.mp3"); // New audio for
 
 document.getElementById("focusBlockButton").style.textDecoration = "underline";
 
-document.getElementById('clickme').style.visibility = "visible";
+document.getElementById('clickMe').style.visibility = "visible";
 
 document.querySelector('input[id="minuteFieldInput"]').value = dm.toString();
 document.querySelector('input[id="secondFieldInput"]').value = 0 + ds.toString();
@@ -38,7 +38,7 @@ function tabSwitch() {
     document.querySelector('input[id="minuteFieldInput"]').disabled = false;
     document.querySelector('input[id="secondFieldInput"]').disabled = false;
 
-    document.getElementById('clickme').style.visibility = "visible";
+    document.getElementById('clickMe').style.visibility = "visible";
     
     document.getElementById("playButton").innerHTML = "PLAY";
     document.getElementById("pauseButton").innerHTML = "";
@@ -55,7 +55,7 @@ function playResume() {
         document.querySelector('input[id="minuteFieldInput"]').disabled = true;
         document.querySelector('input[id="secondFieldInput"]').disabled = true;
 
-        document.getElementById('clickme').style.visibility = "hidden";
+        document.getElementById('clickMe').style.visibility = "hidden";
 
         document.getElementById("playButton").style.opacity = 0;
         document.getElementById("pauseButton").style.opacity = 100;
