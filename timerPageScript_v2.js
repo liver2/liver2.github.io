@@ -42,7 +42,6 @@ function tabSwitch() {
     
     document.getElementById("playButton").innerHTML = "PLAY";
     document.getElementById("pauseButton").innerHTML = "";
-    document.getElementById("resumeButton").innerHTML = "";
 
     timerFinishedAudio.pause();
     timerFinishedAudio.currentTime = 0;
