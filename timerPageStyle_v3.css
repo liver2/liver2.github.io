@@ -115,6 +115,6 @@ table {
 
 .aboutMe { 
     font-family: 'Riafont';
-    display: flex;
+    width: 100vw;
     text-align: left;
 }
