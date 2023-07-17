@@ -9,7 +9,7 @@ var lbs = 0; // Long break seconds
 var dm = 25; // Display minutes
 var ds = 0; // Display seconds
 
-var block = "F"; // other options: "SB" & "LB"
+var block = "F.B."; // other options: "S.B." & "L.B."
 var timerStatus = "NOT_STARTED"; // other options: "TICKING", "PAUSED", "FINISHED"
 
 var timerInterval; // Declaring this variable now so that it's global
@@ -21,6 +21,8 @@ var timerFinishedAudio = new Audio("kinderszenenRingtone.mp3"); // New audio for
 document.getElementById("focusBlockButton").style.textDecoration = "underline";
 
 document.getElementById('clickMe').style.visibility = "visible";
+
+document.title = "Focus With Cats";
 
 document.querySelector('input[id="minuteFieldInput"]').value = dm.toString();
 document.querySelector('input[id="secondFieldInput"]').value = 0 + ds.toString();
@@ -47,6 +49,8 @@ function tabSwitch() {
     timerFinishedAudio.currentTime = 0;
 }
 
+// --------------
+
 function playResume() {
     if (timerStatus == "NOT_STARTED") {
         timerStatus = "TICKING";
@@ -70,6 +74,8 @@ function playResume() {
     };
 }
 
+// --------------
+
 function pause() {
     if (timerStatus == "TICKING") {
         timerStatus = "PAUSED";
@@ -78,16 +84,22 @@ function pause() {
         document.getElementById("pauseButton").style.opacity = 0;
 
         clearInterval(timerInterval);
+
+        document.title = "Focus With Cats | " + block + " " + "Paused"
     }
 }
+
+// --------------
 
 function timer() {
     if (ds > 9) {
         document.querySelector('input[id="minuteFieldInput"]').value = dm;
         document.querySelector('input[id="secondFieldInput"]').value = ds;
+        document.title = "Focus With Cats | " + block + " " + dm + ":" + ds;
     } else if (ds > -1) {
         document.querySelector('input[id="minuteFieldInput"]').value = dm;
         document.querySelector('input[id="secondFieldInput"]').value = "0" + ds;
+        document.title = "Focus With Cats | " + block + " " + dm + ":0" + ds;
     }
 
     if (ds == 0) {
@@ -104,9 +116,11 @@ function timer() {
     }
 }
 
+// --------------
+
 function fSwitch() {
     if (timerStatus == "NOT_STARTED" || timerStatus == "PAUSED" || timerStatus == "FINISHED") {
-        block = "F";
+        block = "F.B.";
 
         document.getElementById("focusBlockButton").style.textDecoration = "underline";
         document.getElementById("shortBreakButton").style.textDecoration = "none";
@@ -119,9 +133,11 @@ function fSwitch() {
     }
 }
 
+// --------------
+
 function sbSwitch() {
     if (timerStatus == "NOT_STARTED" || timerStatus == "PAUSED" || timerStatus == "FINISHED") {
-        block = "SB";
+        block = "S.B.";
 
         document.getElementById("focusBlockButton").style.textDecoration = "none";
         document.getElementById("shortBreakButton").style.textDecoration = "underline";
@@ -134,9 +150,11 @@ function sbSwitch() {
     }
 }
 
+// --------------
+
 function lbSwitch() {
     if (timerStatus == "NOT_STARTED" || timerStatus == "PAUSED" || timerStatus == "FINISHED") {
-        block = "LB";
+        block = "L.B.";
 
         document.getElementById("focusBlockButton").style.textDecoration = "none";
         document.getElementById("shortBreakButton").style.textDecoration = "none";
@@ -149,27 +167,31 @@ function lbSwitch() {
     }
 }
 
+// --------------
+
 function minuteChange() {
-    if (block == "F") {
+    if (block == "F.B.") {
         fm = parseInt(document.querySelector('input[id="minuteFieldInput"]').value);
         dm = parseInt(document.querySelector('input[id="minuteFieldInput"]').value);
-    } else if (block == "SB") {
+    } else if (block == "S.B.") {
         sbm = parseInt(document.querySelector('input[id="minuteFieldInput"]').value);
         dm = parseInt(document.querySelector('input[id="minuteFieldInput"]').value);
-    } else if (block == "LB") {
+    } else if (block == "L.B.") {
         lbm = parseInt(document.querySelector('input[id="minuteFieldInput"]').value);
         dm = parseInt(document.querySelector('input[id="minuteFieldInput"]').value);
     }
 }
 
+// --------------
+
 function secondChange() {
-    if (block == "F") {
+    if (block == "F.B.") {
         fs = parseInt(document.querySelector('input[id="secondFieldInput"]').value);
         ds = parseInt(document.querySelector('input[id="secondFieldInput"]').value);
-    } else if (block == "SB") {
+    } else if (block == "S.B.") {
         sbs = parseInt(document.querySelector('input[id="secondFieldInput"]').value);
         ds = parseInt(document.querySelector('input[id="secondFieldInput"]').value);
-    } else if (block == "LB") {
+    } else if (block == "L.B.") {
         lbs = parseInt(document.querySelector('input[id="secondFieldInput"]').value);
         ds = parseInt(document.querySelector('input[id="secondFieldInput"]').value);
     }
