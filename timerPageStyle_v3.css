@@ -123,3 +123,9 @@ table {
     text-align: left;
     margin: 35px;
 }
+
+@media (max-width: 650px) {
+    #timerInterface {
+        width: 90vw;
+    }
+}
