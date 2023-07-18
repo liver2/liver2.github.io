@@ -89,6 +89,10 @@ table {
     background-color: lightgrey; 
 }
 
+#timerInterface td {
+    width: 33%;
+}
+
 #playButton {
     max-width: 30px;
     height: auto;
