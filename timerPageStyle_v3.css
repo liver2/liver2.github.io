@@ -53,11 +53,11 @@ td {
 
 .trDisplay {
   border: none;
-  width: 90px;
+  width: 1.5em;
   position: relative;
   top: 20px;
   font-family: 'Kalam';
-  font-size: 72px;
+  font-size: 36px;
 }
 
 input:disabled {
