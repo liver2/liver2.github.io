@@ -39,6 +39,8 @@ body {
 html {
   font-family: 'Riafont';
   font-size: 36px;
+    overflow: hidden;
+
 }
 
 input::-webkit-outer-spin-button,
