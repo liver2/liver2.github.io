@@ -116,9 +116,9 @@ table {
 
 .aboutMe { 
     font-family: 'Riafont';
-    width: 100vw;
+    width: 80vw;
     text-align: left;
-    margin: 35px;
+    margin: auto;
 }
 
 @media (max-width: 800px) {
