@@ -16,6 +16,8 @@ var timerInterval; // Declaring this variable now so that it's global
 
 var timerFinishedAudio = new Audio("kinderszenenRingtone.mp3"); // New audio for timer finished
 
+var clickAudio = new Audio("Mouse-Click-00-m-FesliyanStudios.com.mp3"); 
+
 // --------------
 
 document.getElementById("focusBlockButton").style.textDecoration = "underline";
@@ -47,6 +49,8 @@ function tabSwitch() {
 
     timerFinishedAudio.pause();
     timerFinishedAudio.currentTime = 0;
+
+    clickAudio.play();
 }
 
 // --------------
@@ -64,6 +68,8 @@ function playResume() {
         document.getElementById("pauseButton").style.opacity = 100;
 
         timerInterval = setInterval(timer,1000);
+
+        clickAudio.play();
     } else if (timerStatus == "PAUSED") {
         timerStatus = "TICKING";
 
@@ -71,6 +77,8 @@ function playResume() {
         document.getElementById("pauseButton").style.opacity = 100;
 
         timerInterval = setInterval(timer,1000);
+
+        clickAudio.play();
     };
 }
 
@@ -86,6 +94,8 @@ function pause() {
         clearInterval(timerInterval);
 
         document.title = "Focus With Cats | " + block + " " + "Paused"
+
+        clickAudio.play();
     }
 }
 
