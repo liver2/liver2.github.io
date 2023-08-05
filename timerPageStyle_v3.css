@@ -123,7 +123,8 @@ table {
 
 .aboutMe p {
     width: 60%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     text-align: left;
 }
 
