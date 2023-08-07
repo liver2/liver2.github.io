@@ -44,8 +44,8 @@ function tabSwitch() {
 
     document.getElementById('clickMe').style.visibility = "visible";
     
-    document.getElementById("playButton").innerHTML = "PLAY";
-    document.getElementById("pauseButton").innerHTML = "";
+    document.getElementById("playButton").style.opacity = 100;
+    document.getElementById("pauseButton").style.opacity = 0;
 
     timerFinishedAudio.pause();
     timerFinishedAudio.currentTime = 0;
