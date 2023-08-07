@@ -116,9 +116,16 @@ table {
 
 .aboutMe { 
     font-family: 'Riafont';
-    width: 80vw;
-    text-align: left;
+    width: 100vw;
+    text-align: center;
     margin: auto;
+}
+
+.aboutMe p {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 @media (max-width: 800px) {
