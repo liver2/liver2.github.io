@@ -14,9 +14,9 @@ var timerStatus = "NOT_STARTED"; // other options: "TICKING", "PAUSED", "FINISHE
 
 var timerInterval; // Declaring this variable now so that it's global
 
-var timerFinishedAudio = new Audio("../sounds/bell.mp3"); // New audio for timer finished
+var timerFinishedAudio = new Audio("./sounds/bell.mp3"); // New audio for timer finished
 
-var clickAudio = new Audio("../sounds/click.mp3"); 
+var clickAudio = new Audio("./sounds/click.mp3"); 
 
 // --------------
 
