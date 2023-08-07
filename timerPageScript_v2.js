@@ -50,7 +50,7 @@ function tabSwitch() {
     timerFinishedAudio.pause();
     timerFinishedAudio.currentTime = 0;
 
-    // clickAudio.play();
+    clickAudio.play();
 }
 
 // --------------
@@ -69,7 +69,7 @@ function playResume() {
 
         timerInterval = setInterval(timer,1000);
 
-        // clickAudio.play();
+        clickAudio.play();
     } else if (timerStatus == "PAUSED") {
         timerStatus = "TICKING";
 
@@ -78,7 +78,7 @@ function playResume() {
 
         timerInterval = setInterval(timer,1000);
 
-        // clickAudio.play();
+        clickAudio.play();
     };
 }
 
@@ -95,7 +95,7 @@ function pause() {
 
         document.title = "Focus With Cats | " + block + " " + "Paused"
 
-        // clickAudio.play();
+        clickAudio.play();
     }
 }
 
