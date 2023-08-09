@@ -123,9 +123,7 @@ function timer() {
         clearInterval(timerInterval);
         timerStatus = "FINISHED";
         document.title = "Focus With Cats | " + block + " Finished!";
-        while (timerStatus == "FINISHED") {
-            timerFinishedAudio.play();
-        }
+        timerFinishedAudio.play();
     }
 }
 
