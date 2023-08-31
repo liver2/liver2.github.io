@@ -14,7 +14,9 @@ var timerStatus = "NOT_STARTED"; // other options: "TICKING", "PAUSED", "FINISHE
 
 var timerInterval; // Declaring this variable now so that it's global
 
-var timerFinishedAudio = new Audio("kinderszenenRingtone.mp3"); // New audio for timer finished
+var timerFinishedAudio = new Audio("./sounds/bell.mp3"); // New audio for timer finished
+
+var clickAudio = new Audio("./sounds/click.mp3"); 
 
 // --------------
 
@@ -42,11 +44,13 @@ function tabSwitch() {
 
     document.getElementById('clickMe').style.visibility = "visible";
     
-    document.getElementById("playButton").innerHTML = "PLAY";
-    document.getElementById("pauseButton").innerHTML = "";
+    document.getElementById("playButton").style.opacity = 100;
+    document.getElementById("pauseButton").style.opacity = 0;
 
     timerFinishedAudio.pause();
     timerFinishedAudio.currentTime = 0;
+
+    clickAudio.play();
 }
 
 // --------------
@@ -64,6 +68,8 @@ function playResume() {
         document.getElementById("pauseButton").style.opacity = 100;
 
         timerInterval = setInterval(timer,1000);
+
+        clickAudio.play();
     } else if (timerStatus == "PAUSED") {
         timerStatus = "TICKING";
 
@@ -71,6 +77,8 @@ function playResume() {
         document.getElementById("pauseButton").style.opacity = 100;
 
         timerInterval = setInterval(timer,1000);
+
+        clickAudio.play();
     };
 }
 
@@ -86,6 +94,8 @@ function pause() {
         clearInterval(timerInterval);
 
         document.title = "Focus With Cats | " + block + " " + "Paused"
+
+        clickAudio.play();
     }
 }
 
@@ -111,8 +121,9 @@ function timer() {
 
     if (dm < 0) {
         clearInterval(timerInterval);
-        timerFinishedAudio.play();
         timerStatus = "FINISHED";
+        document.title = "Focus With Cats | " + block + " Finished!";
+        timerFinishedAudio.play();
     }
 }
 
@@ -131,6 +142,10 @@ function fSwitch() {
 
         tabSwitch();
     }
+
+    if (timerStatus == "FINISHED" || timerStatus == "PAUSED") {
+        timerStatus = "NOT_STARTED";
+    }
 }
 
 // --------------
@@ -148,6 +163,10 @@ function sbSwitch() {
 
         tabSwitch();
     }
+
+    if (timerStatus == "FINISHED" || timerStatus == "PAUSED") {
+        timerStatus = "NOT_STARTED";
+    }
 }
 
 // --------------
@@ -164,6 +183,10 @@ function lbSwitch() {
         ds = lbs;
 
         tabSwitch();
+    }
+
+    if (timerStatus == "FINISHED" || timerStatus == "PAUSED") {
+        timerStatus = "NOT_STARTED";
     }
 }
 

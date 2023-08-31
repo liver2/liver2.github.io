@@ -1,4 +1,2 @@
-# liver2.github.io
-hi!!1
-1!
-!!
+# Focus With Cats
+A little project I made :D 
